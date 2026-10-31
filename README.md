@@ -16,12 +16,32 @@ native OSD when you flip it.
 
 ## Install
 
-This repository is a Noctalia plugin source. Add it, then enable the plugin:
+This repository is a Noctalia plugin source. Add it and enable the plugin:
 
     noctalia msg plugins source add augussst git https://github.com/Augussst/lenovo-loq-camera-switch
     noctalia msg plugins enable augussst/lenovo-loq-camera-switch
 
-Then add the **Lenovo LOQ Camera Switch → indicator** widget to your bar and do
-the one-time setup from the [plugin README](lenovo-loq-camera-switch/README.md).
-I have not tested installing from GitHub this way; the same layout works as a
-local source on my machine.
+Then:
+
+1. Do the one-time root setup from the [plugin README](lenovo-loq-camera-switch/README.md#one-time-setup).
+2. Add the **Lenovo LOQ Camera Switch → indicator** widget to your bar in
+   Noctalia's settings.
+
+You can also add the source in **Settings → Plugins → Add source** instead of
+the first command.
+
+## Update
+
+    noctalia msg plugins update augussst
+
+## Uninstall
+
+    noctalia msg plugins disable augussst/lenovo-loq-camera-switch
+    noctalia msg plugins source remove augussst
+
+The one-time setup files stay until you remove them:
+`/etc/modules-load.d/ec_sys.conf` and `/etc/tmpfiles.d/ec-camera.conf`.
+
+## License
+
+MIT, see [LICENSE](LICENSE).
